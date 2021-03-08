@@ -667,62 +667,22 @@
             /*
                 Everything is loaded including images.
             */
-            $(window).load(function(){
-
-                adjustHeightOfPage(1); // Adjust page height
-
-                /* Gallery One pop up
-                -----------------------------------------*/
-                $('.gallery-one').magnificPopup({
-                    delegate: 'a', // child items selector, by clicking on it popup will open
-                    type: 'image',
-                    gallery:{enabled:true}                
-                });
-				
-				/* Gallery Two pop up
-                -----------------------------------------*/
-				$('.gallery-two').magnificPopup({
-                    delegate: 'a',
-                    type: 'image',
-                    gallery:{enabled:true}                
-                });
-
-                /* Gallery Three pop up
-                -----------------------------------------*/
-                $('.gallery-three').magnificPopup({
-                    delegate: 'a',
-                    type: 'image',
-                    gallery:{enabled:true}                
-                });
-
-                /* Collapse menu after click 
-                -----------------------------------------*/
-                $('#tmNavbar a').click(function(){
-                    $('#tmNavbar').collapse('hide');
-
-                    adjustHeightOfPage($(this).data("no")); // Adjust page height       
-                });
-
-                /* Browser resized 
-                -----------------------------------------*/
-                $( window ).resize(function() {
-                    var currentPageNo = $(".cd-hero-slider li.selected .js-tm-page-content").data("page-no");
-                    
-                    // wait 3 seconds
-                    setTimeout(function() {
-                        adjustHeightOfPage( currentPageNo );
-                    }, 1000);
-                    
-                });
-        
-                // Remove preloader (https://ihatetomatoes.net/create-custom-preloading-screen/)
-                $('body').addClass('loaded');
-                           
-            });
-
-           
-
-        </script>            
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="时间显示器">
+    <meta http-equiv="content-type" content="text/html">
+    <link rel="stylesheet" href="css/style.css">
+    <title>时间显示器</title>
+</head>
+<body>
+    <svg>
+        <text id="time" text-anchor="middle" x="50%" y="50%" class="words words-1"/>
+        <text id="time" text-anchor="middle" x="50%" y="50%" class="words words-2"/>
+        <text id="time" text-anchor="middle" x="50%" y="50%" class="words words-3"/>
+        <text id="time" text-anchor="middle" x="50%" y="50%" class="words words-4"/>
+    </svg>
+    <script src="js/script.js"></script>
 </body>
 </html>
